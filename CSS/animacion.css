@@ -84,7 +84,6 @@ y los haremos girar alternar y transformar
     color: white;
     text-align: center;
     height: 200px;
-    display: flex;
     justify-content: center;
     align-items: center;
 
@@ -93,8 +92,6 @@ y los haremos girar alternar y transformar
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
-
-
 
 
 
