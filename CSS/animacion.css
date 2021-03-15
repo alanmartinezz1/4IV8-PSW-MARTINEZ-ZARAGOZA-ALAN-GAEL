@@ -2,33 +2,18 @@
 vamos a crear una animacion a partir de frames
 y los haremos girar alternar y transformar
 */
+:root{
+    --text-color: rgb(56, 58, 56);
+    --hr-color: #c8c8ff ;
+    --red: rgb(232, 149, 255);
+}
 
 @keyframes animacion_test{
     from{
-        background-color: rgb(77, 80, 78);
+        background-color: rgb(56, 44, 61);
     }
     to{
-        background-color: rgb(66, 65, 70);
-    }
-}
-
-@keyframes girar{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes label-animation{
-    from{
-        transform: rotate(0deg);
-        margin-left: 0;
-    }
-    to{
-        transform: rotate(180deg);
-        margin-left: 86vw;
+        background-color: rgb(39, 39, 41);
     }
 }
 
@@ -63,8 +48,18 @@ y los haremos girar alternar y transformar
     animation-iteration-count: infinite;
 }
 
+ul{
+    list-style-type: none;
+}
+
+a{
+    color: var(--red);
+    text-decoration: none;
+}
+
 html, body{
-    background-color: black;
+    background-image: url(./fondo.gif);
+    background-size: 1980px ;
 }
 
 section, footer, article, aside{
@@ -75,7 +70,7 @@ section, footer, article, aside{
 }
 
 article, aside{
-    width: 40%;
+    width: 45%;
     display: inline-block;
     height: 200px;
     background-color: rgb(36, 36, 36);
@@ -90,4 +85,79 @@ section, footer{
     bottom: 10px;
     right: 10px;
     font-size: 1rem;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+}
+
+.menu li{
+    margin-right: 40px;
+}
+
+.menu a{
+    position: relative;
+    display: block;
+    overflow: hidden;
+}
+
+.menu a span{
+    transition: transform 0.2s ease-out;
+}
+
+.menu a span:first-child{
+    display: inline-block;
+    padding: 10px;
+}
+
+.menu a span:last-child{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+}
+
+.menu i{
+    font-size: 30px;
+}
+
+.menu a:hover span:first-child{
+    transform: translateY(100%);
+}
+
+.menu a:hover span:last-child, 
+.menu[data-animation] a:hover span:last-child{
+    transform: none;
+}
+
+/*animaciones*/
+
+.menu[data-animation="to-top"] a span:last-child{
+    transform: translateY(100%);
+}
+
+.menu[data-animation="to-top"] a span:first-child{
+    transform: translateY(-100%);
+}
+
+.menu[data-animation="to-right"] a span:last-child{
+    transform: translateX(100%);
+}
+
+.menu[data-animation="to-right"] a span:first-child{
+    transform: translateX(-100%);
+}
+
+.menu[data-animation="to-left"] a span:last-child{
+    transform: translateX(100%);
+}
+
+.menu[data-animation="to-left"] a span:first-child{
+    transform: translateX(-100%);
 }
