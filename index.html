@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi primera página en HTML5</title>
     <link rel="stylesheet" href="./CSS/masterstyle.css">
+    <link rel="stylesheet" href="./CSS/botonesbonis.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 </head>
+
 <body>
     <!--cometario perrón-->
     <div class="main-container">
@@ -20,36 +24,77 @@
             <h2>Presiona el hipervínculo para dirigirte a la sección elegida.</h2>
             <br>
             <article>
-                <h3>Datos Personales</h3>
-                <br>
-                <a href="animacion.html">Pagina animada</a>
-                <br>
-                
+                <ul class="menu">
+                    <li>
+
+                        <a href="animacion.html">
+                            <span>
+                                <h3>Datos Personales</h3>
+                            </span>
+                            <span>
+                                <i class="fas fa-address-card" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
             </article>
             <aside>
-                <h3>Escolaridad</h3>
-                <br>
-                <a href="escuela.html">Pagina hover</a>
+                <ul class="menu">
+                    <li>
+
+                        <a href="escuela.html">
+                            <span>
+                                <h3>Escolaridad</h3>
+                            </span>
+                            <span>
+                                <i class="fas fa-school" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
             </aside>
 
             <article>
-                <h3>Hobbies</h3>
-                <br>
-                <a href="hobbies.html">uwuwuwuwuuw</a>
+                <ul class="menu">
+                    <li>
+
+                        <a href="hobbies.html">
+                            <span>
+                                <h3>Hobbies</h3>
+                            </span>
+                            <span>
+                                <i class="fas fa-hand-holding-heart" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
             </article>
             <aside>
-                <h3>Skills</h3>
-                <br>
-                <a href="#0"></a>
+                <ul class="menu">
+                    <li>
+
+                        <a href="habilitys.html">
+                            <span>
+                                <h3>Habilidades</h3>
+                            </span>
+                            <span>
+                                <i class="fas fa-brain" aria-hidden="true"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
             </aside>
 
         </section>
 
-        <footer>
-            <h4>Pies de la página</h4>
+        <footer class="page-footer">
+            <span>Caracteres hechos por un desconocido. :))</span>
+            <a href="http://georgemartsoukos.com">George Martsoukos</a>
         </footer>
 
     </div>
-    
+
 </body>
+
 </html>
