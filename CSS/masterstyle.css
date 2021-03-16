@@ -28,7 +28,7 @@ article, aside{
     width: 40%;
     display: inline-block;
     height: 50px;
-    background-color: rgb(36, 36, 36);
+    background-image: url(reemo.jpg);
 }
 
 nav, section, footer{

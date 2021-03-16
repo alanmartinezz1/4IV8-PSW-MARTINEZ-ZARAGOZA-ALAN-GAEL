@@ -62,6 +62,11 @@ html, body{
     background-size: 1980px ;
 }
 
+body{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
+
 section, footer, article, aside{
     border: 2px solid rgb(61, 55, 92);
     margin: 1rem;
@@ -69,10 +74,14 @@ section, footer, article, aside{
     padding: 1rem;
 }
 
+div{
+    height: 35px;
+}
+
 article, aside{
     width: 45%;
     display: inline-block;
-    height: 200px;
+    height: 190px;
     background-color: rgb(36, 36, 36);
 }
 
@@ -84,7 +93,7 @@ section, footer{
     position: absolute;
     bottom: 10px;
     right: 10px;
-    font-size: 1rem;
+    font-size: 10px;
 }
 
 .menu{
@@ -160,4 +169,8 @@ section, footer{
 
 .menu[data-animation="to-left"] a span:first-child{
     transform: translateX(-100%);
+}
+
+.arriba{
+    font-size: 20px;
 }

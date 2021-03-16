@@ -20,11 +20,12 @@ a{
 
 body{
     margin: 30px 0;
-    font: 22px sans-serif;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
     background: var(--body-bg-color);
     color: var(--text-color);
 }
-
+/* Timmana, New Rocker*/
 hr{
     border-color: var(--hr-color);
     margin: 20px 0;
@@ -111,9 +112,13 @@ hr{
     position: absolute;
     bottom: 10px;
     right: 10px;
-    font-size: 1rem;
+    font-size: 10px;
 }
 
 .page-footer span{
     color: var(--red);
+}
+
+.arriba{
+    font-size: 20px;
 }
