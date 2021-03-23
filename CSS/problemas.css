@@ -1,0 +1,22 @@
+.td_superior{
+    align-items: left;
+    width: 100;
+    justify-content: left;
+}
+
+.td_inferior{
+    align-items: center;
+    justify-content: center;
+    width: 150;
+}
+
+.input_text{
+    align-items: center;
+    justify-content: center;
+    size: 12;
+    border-width: 2px;
+    border-style: solid;
+    color: #678963;
+    letter-spacing: 3px;
+    font-size: 10px;
+}
