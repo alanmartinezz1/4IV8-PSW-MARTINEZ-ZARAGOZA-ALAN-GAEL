@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Problema 01 JS</title>
     <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema01.js"></script>
 </head>
 <body>
     
@@ -16,20 +17,20 @@
     </p>
 
     <form method="POST" name="formulario">
-        <table>
+        <table align="center" border="1">
             <tr>
                 <td class="td_superior">
                     Introduce la cantidad a invertir: $
                 </td>
 
                 <td class="td_inferior">
-                    <input type="text" name="cantidad" onkeypress="">
+                    <input type="text" name="cantidad" onkeypress="return validarn(event)">
                 </td>
             </tr>
             <tr>
                 <td></td>
                 <td class="td_inferior">
-                    <input type="button" value="interes" name="enviar" onclick="">
+                    <input type="button" value="interes" name="enviar" onclick="interes()">
                 </td>
             </tr>
             <tr>
@@ -43,7 +44,7 @@
             <tr>
                 <td></td>
                 <td>
-                    <input type="button" value="borrar" name="borrar" onclick="">
+                    <input type="button" value="borrar" name="borrar" onclick="borrar()">
                 </td>
             </tr>
         </table>
