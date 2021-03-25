@@ -17,6 +17,10 @@ html, body{
     background-color: rgb(53, 52, 52);
 }
 
+.menu h3{
+    text-align: center;
+}
+
 nav, section, footer, article, aside{
     border: 2px solid rgb(61, 55, 92);
     margin: 1rem;
