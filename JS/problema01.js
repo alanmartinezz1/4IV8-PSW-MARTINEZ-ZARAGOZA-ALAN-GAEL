@@ -17,8 +17,10 @@ function validarn(e){
 
 function interes(){
     var valor = document.formulario.cantidad.value;
+    var valor2 = document.formulario.meses.value;
+    var mes = parseInt(valor2)
     var result = parseInt(valor);
-    var interes = result*0.02;
+    var interes = (mes*result)*0.02;
     var total = result+interes;
 
     document.formulario.sueldoti.value = "$"+total;

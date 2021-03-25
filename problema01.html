@@ -11,13 +11,13 @@
 <body>
     
     <p>
-        Se le ha ordenado diseñar una aplicación web la cual puedad 
-        calcular el interés de pago menusla de una inversión al 2%,
-        para lo cual debera diseñar un fromulario haga dicho cálculo
+        1) Suponga que un individuo desea invertir su capital en un banco y desea
+        saber cuanto dinero ganará después de un mes si el banco paga a razón de 2% mensual.
     </p>
 
     <form method="POST" name="formulario">
         <table align="center" border="1">
+            <!--dinero-->
             <tr>
                 <td class="td_superior">
                     Introduce la cantidad a invertir: $
@@ -27,12 +27,25 @@
                     <input type="text" name="cantidad" onkeypress="return validarn(event)">
                 </td>
             </tr>
+   
+            <!--meses-->
+            <tr>
+                <td class="td_superior">
+                    Introduce la cantidad de meses: 
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="meses" onkeypress="return validarn(event)">
+                </td>
+            </tr>
             <tr>
                 <td></td>
                 <td class="td_inferior">
                     <input type="button" value="interes" name="enviar" onclick="interes()">
                 </td>
             </tr>
+
+            <!--interes-->
             <tr>
                 <td class="td_superior">
                     Su saldo total con interes al 2% es: 
@@ -52,7 +65,7 @@
     <br>
     <table>
         <tr>
-            <td><a href="formulario.html">Regresar al formulario principal</a></td>
+            <td><a href="index.html">Regresar al menu</a></td>
         </tr>
     </table>
 

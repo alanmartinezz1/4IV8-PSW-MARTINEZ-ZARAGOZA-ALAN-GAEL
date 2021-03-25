@@ -2,12 +2,14 @@
     align-items: left;
     width: 100;
     justify-content: left;
+    background-color: rgb(233, 233, 233);
 }
 
 .td_inferior{
     align-items: center;
     justify-content: center;
     width: 150;
+    background-color: rgb(236, 236, 236);
 }
 
 .input_text{
@@ -16,14 +18,21 @@
     size: 12;
     border-width: 2px;
     border-style: solid;
-    color: #50eb3f;
+    color: #0d5005;
     letter-spacing: 3px;
     font-size: 10px;
 }
 
 *{
-    background-color: rgb(65, 198, 216);
+    background-color: rgb(255, 255, 255);
 }
+
+td{
+    background-color: rgb(236, 236, 236);
+}
+
+input{
+    background-color: rgb(217, 255, 244);
 
 p{
     font-size: 16px;
@@ -31,4 +40,8 @@ p{
     justify-content: center;
     color: #452844;
     
+}
+
+table{
+    background-color: rgb(233, 233, 233);
 }
