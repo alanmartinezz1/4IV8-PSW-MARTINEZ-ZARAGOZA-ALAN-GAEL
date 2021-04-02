@@ -23,7 +23,8 @@ function comision(){
 }
 
 function borrar(){
-    document.formulario.comision.value = "";
+    document.formulario.comisionn.value = "";
     document.formulario.sueldoti.value = "";
-    document.formulario.cantidad.value = "";
+    document.formulario.sueldo.value = "";
+    document.formulario.ventas.value = "";
 }

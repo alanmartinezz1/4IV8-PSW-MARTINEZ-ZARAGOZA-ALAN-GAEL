@@ -29,4 +29,5 @@ function interes(){
 function borrar(){
     document.formulario.sueldoti.value = "";
     document.formulario.cantidad.value = "";
+    document.formulario.meses.value = "";
 }
