@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 05 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema05.js"></script>
+</head>
+<body>
+    
+    <p>
+        5) Un maestro desea saber que porcentaje de hombres y que porcentaje de mujeres hay en un grupo de estudiantes.
+    </p>
+    <form method="POST" name="formulario">
+        <table align="center" border="1">
+            <!--original-->
+            <tr>
+                <td class="td_superior">
+                    Escriba el numero de hombres en el grupo:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="nh" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_superior">
+                    Escriba el numero de mujeres en el grupo:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="nm" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="td_inferior"> 
+                    <input type="button" value="calcular" name="enviar" onclick="porcentaje()">
+                </td>
+            </tr>
+            <!--total-->
+            <tr>
+                <td class="td_superior">
+                    El porcentaje de hombres es de: 
+                </td>
+                <td>
+                    <input type="text" name="hombres" id="cantidadi" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_superior">
+                    El porcentaje de mujeres es de: 
+                </td>
+                <td>
+                    <input type="text" name="mujeres" id="cantidadii" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="reset" name="Borrar" onclick="borrar()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <td><a href="Menuinteres.html">Regresar al menu</a></td>
+        </tr>
+    </table>
+
+</body>
+</html>

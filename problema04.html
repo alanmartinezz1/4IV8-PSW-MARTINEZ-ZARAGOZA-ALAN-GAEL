@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 04 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema04.js"></script>
+</head>
+<body>
+    
+    <p>
+        4) Un alumno desea saber cual será su calificación final en la materia de algoritmos.
+        Dicha calificación se compone de los siguientes porcentajes:
+    </p>
+    <p>55% del promedio de sus tres calificaciones parciales.</p>
+    <p>30% de la calificación del examen final.</p>
+    <p>15% de la calificación de un trabajo final.</p>
+    <form method="POST" name="formulario">
+        <table align="center" border="1">
+            <!--original-->
+            <tr>
+                <td class="td_superior">
+                    Escriba el puntaje obtenido en su examen final:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="examen" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_superior">
+                    Escriba el puntaje obtenido en su trabajo final:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="trabajo" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_superior">
+                    Escriba el promedio de sus tres calificaciones parciales:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="promedio" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="td_inferior"> 
+                    <input type="button" value="calificación final" name="enviar" onclick="calificaciones()">
+                </td>
+            </tr>
+            <!--total-->
+            <tr>
+                <td class="td_superior">
+                    Su calificación final es de: 
+                </td>
+                <td>
+                    <input type="text" name="calificacion" id="cantidadi" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="reset" name="Borrar" onclick="borrar()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <td><a href="Menuinteres.html">Regresar al menu</a></td>
+        </tr>
+    </table>
+
+</body>
+</html>
