@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 06 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema06.js"></script>
+</head>
+<body>
+    
+    <p>
+        6) Realizar un algoritmo que calcule la edad de una persona.
+    </p>
+    <form method="POST" name="formulario">
+        <table align="center" border="1">
+            <!--dia-->
+            <tr>
+                <td class="td_superior">
+                    Escriba el día que nació:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="dn" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_superior">
+                    Escriba el mes que nació:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="mn" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <!--mes-->
+            <tr>
+                <td class="td_superior">
+                    Escriba el año que nació:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="an" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_superior">
+                    Escriba el día actual:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="da" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <!--año-->
+            <tr>
+                <td class="td_superior">
+                    Escriba el mes actual:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="ma" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_superior">
+                    Escriba el año actual:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="aa" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="td_inferior"> 
+                    <input type="button" value="calcular" name="enviar" onclick="edades()">
+                </td>
+            </tr>
+            <!--total-->
+            <tr>
+                <td class="td_superior">
+                    El porcentaje de hombres es de: 
+                </td>
+                <td>
+                    <input type="text" name="edad" id="cantidadi" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="reset" name="Borrar" onclick="borrar()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <td><a href="Menuinteres.html">Regresar al menu</a></td>
+        </tr>
+    </table>
+
+</body>
+</html>
