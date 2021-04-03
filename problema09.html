@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 09 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema09.js"></script>
+</head>
+<body>
+    
+    <p>
+        9) Determinar la cantidad de dinero que recibirá un trabajador por concepto de las horas extras trabajadas en una empresa
+    </p>
+    <p>
+        sabiendo que cuando las horas de trabajo exceden de 40, el resto se consideren horas extras y que estas se pagan el doble de 
+    </p>
+    <p>
+        una hora normal cuando no exceden de 8; si las horas extras exceden de 8 se pagan las primeras 8 al doble de lo que se pagan las
+    </p>
+    <p>
+        primeras 8 al doble de lo que se pagan las horas normales y el resto al triple.
+    </p>
+    <form method="POST" name="formulario">
+        <table align="center" border="1">
+            <!--numeros-->
+            <tr>
+                <td class="td_superior">
+                    Escrib las horas trabajadas:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="horas" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+            <tr>
+                <td class="td_superior">
+                    Escriba su sueldo:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="pago" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="td_inferior"> 
+                    <input type="button" value="calcular" name="enviar" onclick="sueldo()">
+                </td>
+            </tr>
+            <!--total-->
+            <tr>
+                <td class="td_superior">
+                    Dinero a recibir: 
+                </td>
+                <td>
+                    <input type="text" name="sueldooo" id="cantidadi" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="reset" name="Borrar" onclick="borrar()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <td><a href="Menuinteres.html">Regresar al menu</a></td>
+        </tr>
+    </table>
+
+</body>
+</html>

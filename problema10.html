@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema 10 JS</title>
+    <link rel="stylesheet" href="./CSS/problemas.css">
+    <script src="JS/problema10.js"></script>
+</head>
+<body>
+    
+    <p>
+        10) Calcular la utilidad que un trabajador recibe en el reparto anual de utilidades si este se le asigna como un porcentaje de su salario mensual que depende de su ambigüedad en la empresa de acuerdo con la siguiente tabla:
+    </p>
+
+    <table>
+        <tr>
+            <td class="td_superior">
+                Tiempo
+            </td>
+            <td class="td_inferior">
+                Utilidad
+            </td>
+        </tr>
+        <tr>
+            <td class="td_superior">
+                Menos de 1 año
+            </td>
+            <td class="td_inferior">
+                5 % del salario
+            </td>
+        </tr>
+        <tr>
+            <td class="td_superior">
+                1 año o más y menos de 2 años
+            </td>
+            <td class="td_inferior">
+                7 % del salario
+            </td>
+        </tr>
+        <tr>
+            <td class="td_superior">
+                2 años o más y menos de 5 años
+            </td>
+            <td class="td_inferior">
+                10 % del salario
+            </td>
+        </tr>
+        <tr>
+            <td class="td_superior">
+                5 años o más y menos de 10 años
+            </td>
+            <td class="td_inferior">
+                15 % del salario
+            </td>
+        </tr>
+        <tr>
+            <td class="td_superior">
+                10 años o más
+            </td>
+            <td class="td_inferior">
+                20 % del salario
+            </td>
+        </tr>
+    </table>
+
+    <form method="POST" name="formulario">
+        <table align="center" border="1">
+            <!--numeros-->
+            <tr>
+                <td class="td_superior">
+                    Escriba el tiempo en años exactos que ha trabajado.:
+                </td>
+
+                <td class="td_inferior">
+                    <input type="text" name="tiempo" onkeypress="return validarn(event)">
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td class="td_inferior"> 
+                    <input type="button" value="utilidad" name="enviar" onclick="utilidadd()">
+                </td>
+            </tr>
+            <!--total-->
+            <tr>
+                <td class="td_superior">
+                    Su utilidad es de: 
+                </td>
+                <td>
+                    <input type="text" name="porcentaje" id="cantidadi" readonly="readonly" class="input_text">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="reset" name="Borrar" onclick="borrar()">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <td><a href="Menuinteres.html">Regresar al menu</a></td>
+        </tr>
+    </table>
+
+</body>
+</html>
