@@ -21,15 +21,29 @@ function edades(){
     var valor4 = document.formulario.dn.value;
     var valor5 = document.formulario.mn.value;
     var valor6 = document.formulario.an.value;
+    var cuatro = parseInt(valor4);
+    var cinco = parseInt(valor5);
+    var seis = parseInt(valor6);
 
-    var año = valor3-valor6;
+    var año = tres-seis;
     
-    if((valor2 >= valor5) && (valor4 >= valor)){
+    if(dos >= cinco && cuatro >= uno){
         var edadd = año;
         document.formulario.edad.value = edadd + " años.";
-    }else{
+    }else if(dos <= cinco && cuatro < uno);{
         var edadd = año - 1;
         document.formulario.edad.value = edadd + " años.";
+    }
+
+    if(valor3 > 2100 || valor6 > 2021){
+        document.formulario.edad.value = "Viaje en el tiempooo";
+    }
+
+    if(valor6 < 1920){
+        document.formulario.edad.value = "Eres muy viejo 0.o";
+    }
+    if(valor3 < 2021){
+        document.formulario.edad.value = "¿seguro?";
     }
 
 }
