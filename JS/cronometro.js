@@ -20,7 +20,7 @@ function init(){
 
 function iniciarContador(){
     if(verificador == false){
-        var intervalo = setInterval(function (){
+            intervalo = setInterval(function (){
             tiempo+= 0.01;
             temporizador.innerHTML = tiempo.toFixed(2);
 
@@ -42,7 +42,7 @@ function resetContador(){
     }
 }
 
-function grabar(){
+function grabarContador(){
     if(temporizador.textContent === '0.00'){
         console.log('click para iniciar el cronómetro');
     }else{
@@ -54,3 +54,5 @@ function grabar(){
         almacenarTiempos.appendChild(p);
     }
 }
+
+//parar de tarea
