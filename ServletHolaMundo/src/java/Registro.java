@@ -11,12 +11,63 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/*
+Connection nos ayuda a realizar la conexión con las bases de datos con el servidor;
+Statement nos ayuda a poder definir y manipular los datos de las bases de datos
+creación de las bases de datos, insertar tablas, eliminarlas, create, drop, alter
+manipulación de los datos, insert, update, delete;
+ResultSet nos ayuda para las querrys, o las consultas de las bases de datos;
+*/
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import java.sql.ResultSet;
+import javax.servlet.ServletConfig;
+
 /**
  *
  * @author user
  */
 public class Registro extends HttpServlet {
+    
+    //variables globales
+    
+    private Connection con;
+    private Statement set;
+    private ResultSet rs;
+    
+    /*constructor del servlet
+    nos va a ayudar a inicializar la conexión con la base de datos.
+    */
 
+    public void init(ServletConfig cfg) throws ServletException{
+        
+        //lo priumero que necesitamos es trazar la ruta del servidor a la base de datos
+        String URL = "jdbc:mysql:3306//localhost/registro4iv8";
+        //driver:gestor:puerto//IP/nombreBD
+        String userName = "root";
+        String password = "OBYMA107";
+        
+        try{
+            //colocamos el tipo de driver
+            Class.forName("com.mysql.jdbc.Driver");
+            //En algunas ocaciones sale error porque ya está integrado el puerto en el driver
+            URL = "jdbc:mysql://localhost/registro4iv8";
+            con = DriverManager.getConnection(URL, userName, password);
+            set = con.createStatement();
+            System.out.println("Conexión Exitosa");
+            
+        }catch(Exception e){
+            
+            System.out.println("Conexión no exitosa");
+            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
+            
+        }
+        
+    }
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -48,6 +99,22 @@ public class Registro extends HttpServlet {
             iph = request.getRemoteAddr();
             puertoh = request.getRemotePort();
             
+            /*
+            Una vez que tengamos los datos vamos  insertarlos en la bd
+            
+            insert into table nombre_tabla (definicion_atributo, definicion_atributo...)
+            values ("valores_cadena", valores_numericos, ..);
+            */
+            
+            try{
+            
+                String q = "insert into Mregistro (nom_usu, appat_usu, appmat_usu, edad_usu, correo_usu)"
+                        + "values ('"+nom+"', '"+appat+"', '"+appmat+"', "+edad+", '"+correo+"')";
+              
+                //ejecutar la sentencia.
+               set.executeUpdate(q);
+               System.out.println("Registro Exitoso");
+                
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -74,6 +141,25 @@ public class Registro extends HttpServlet {
                     + "<a href='index.html'>Regresar a la página principal</a>");
             out.println("</body>");
             out.println("</html>");
+            
+            }catch(Exception e){
+                
+                out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Registro</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Registro No Exitoso, vuelva a intentarlo</h1>"
+                    + "<a href='index.html'>Regresar a la página principal</a>");
+            out.println("</body>");
+            out.println("</html>");
+            
+            System.out.println("No se registro en la tabla");
+            System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
+            
+            }
         }
     }
 
