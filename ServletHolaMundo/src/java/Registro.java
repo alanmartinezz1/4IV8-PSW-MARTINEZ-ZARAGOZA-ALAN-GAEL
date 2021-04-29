@@ -10,87 +10,93 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 /*
-Connection nos ayuda a realizar la conexión con las bases de datos con el servidor;
-Statement nos ayuda a poder definir y manipular los datos de las bases de datos
-creación de las bases de datos, insertar tablas, eliminarlas, create, drop, alter
-manipulación de los datos, insert, update, delete;
-ResultSet nos ayuda para las querrys, o las consultas de las bases de datos;
+Connection nos ayuda a realizar la conexion con las bd, con el servidor
 */
-
 import java.sql.Connection;
 import java.sql.DriverManager;
+/*
+Statement nos ayuda a poder definir y manipular los datos de las bd
+creacion de la bd, insertar tablas, eleminar tablas,  create, drop, alter
+    manipulacion de los datos, insert, update, delete
+*/
 import java.sql.Statement;
+/*
+nos ayuda para las querrys, o las consultas a la bd
+*/
 import java.sql.ResultSet;
 import javax.servlet.ServletConfig;
 
 /**
  *
- * @author user
+ * @author demon
  */
 public class Registro extends HttpServlet {
-    
     //variables globales
     
     private Connection con;
     private Statement set;
     private ResultSet rs;
     
-    /*constructor del servlet
-    nos va a ayudar a inicializar la conexión con la base de datos.
-    */
-
+    //el constructor del servlet
+    //nos va a ayudar a inicializar la conexion con la bd
+    
     public void init(ServletConfig cfg) throws ServletException{
         
-        //lo priumero que necesitamos es trazar la ruta del servidor a la base de datos
+        //lo primero que necesitamos es trazar la ruta al servidor DB
         String URL = "jdbc:mysql:3306//localhost/registro4iv8";
         //driver:gestor:puerto//IP/nombreBD
+        
         String userName = "root";
         String password = "OBYMA107";
         
         try{
             //colocamos el tipo de driver
             Class.forName("com.mysql.jdbc.Driver");
-            //En algunas ocaciones sale error porque ya está integrado el puerto en el driver
+            
+            /*
+            en algunas ocaciones enviar error al conectarse con la bd
+            y eso se debe a que ya estegrado el puerto en el driver
+            URL = "jdbc:mysql://localhost/registro4iv8";
+            */
             URL = "jdbc:mysql://localhost/registro4iv8";
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
-            System.out.println("Conexión Exitosa");
-            
+            System.out.println("Conexion exitosa");
+        
         }catch(Exception e){
             
-            System.out.println("Conexión no exitosa");
+            System.out.println("Conexion no exitosa");
             System.out.println(e.getMessage());
             System.out.println(e.getStackTrace());
-            
-        }
         
+        }
     }
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
      *
-     * @param request servlet request
-     * @param response servlet response
+     * @param request servlet request que sirve para peticiones del cliente
+     * @param response servlet response que sirve para dar respuestas por parte del servidor
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, 
+            HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            String nom, appat, appmat, correo, ip, iph;
+            String nom, appat, apmat, correo, ip, iph;
             int edad, puerto, puertoh;
             
             nom = request.getParameter("nombre");
             appat = request.getParameter("appat");
-            appmat = request.getParameter("appmat");
+            apmat = request.getParameter("appmat");
             correo = request.getParameter("correo");
-            
+                        
             edad = Integer.parseInt(request.getParameter("edad"));
             
             ip = request.getLocalAddr();
@@ -99,22 +105,28 @@ public class Registro extends HttpServlet {
             iph = request.getRemoteAddr();
             puertoh = request.getRemotePort();
             
-            /*
-            Una vez que tengamos los datos vamos  insertarlos en la bd
             
-            insert into table nombre_tabla (definicion_atributo, definicion_atributo...)
-            values ("valores_cadena", valores_numericos, ..);
+            /*
+            Una vez que tengamos los datos vamos a insertarlos en la bd
+            
+            insert into nombre_tabla (definicion_atributo, definicion_atributo, ...)
+            values ("valores_cadena", valores_numericos, ....);
+            
             */
             
             try{
-            
-                String q = "insert into Mregistro (nom_usu, appat_usu, appmat_usu, edad_usu, correo_usu)"
-                        + "values ('"+nom+"', '"+appat+"', '"+appmat+"', "+edad+", '"+correo+"')";
-              
-                //ejecutar la sentencia.
-               set.executeUpdate(q);
-               System.out.println("Registro Exitoso");
                 
+                String q = "insert into Mregistro "
+                        + "(nom_usu, appat_usu, apmat_usu, edad_usu, correo_usu) "
+                        + "values ('"+nom+"', '"+appat+"', '"+apmat+"', "+edad+", '"+correo+"')";
+                
+                //ejecutar la sentencia
+                set.executeUpdate(q);
+                
+                System.out.println("Registro exitoso");
+            
+            
+            
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -123,41 +135,44 @@ public class Registro extends HttpServlet {
             out.println("<body>"
                     + "Tu nombre es: " + nom);
             out.println("<br>"
-                    + "Tu apellido Paterno es: " + appat
+                    + "Tu apellido paterno es: " + appat
                     + "<br>"
-                    + "Tu apellido Materno es: " + appmat
+                    + "Tu apellido materno es: " + apmat
                     + "<br>"
-                    + "Tu edad es: " + edad
+                    + "Tu edad es: " +edad
                     + "<br>"
-                    + "Tu correo electrónico es: " + correo);
-            out.println("IP local: " + ip
+                    + "Tu correo electronico es:  "+correo);
+            out.println("<br>"
+                    + "IP local :" + ip
                     + "<br>"
-                    + "Puerto Local: " + puerto
+                    + "Puerto Local :" + puerto
                     + "<br>"
-                    + "IP Remota: " + iph
+                    + "IP Remota :" +iph
                     + "<br>"
-                    + "Puerto Remoto: " + puertoh);
+                    + "Puerto Romoto :" +puertoh);
             out.println("<h1>Registro Exitoso</h1>"
-                    + "<a href='index.html'>Regresar a la página principal</a>");
+                    + "<a href='index.html'>Regresar a la pagina principal</a>"
+                    + "<br>"
+                    + "<a href='Consultar'>Consultar Tabla General de Usuarios</a>");
             out.println("</body>");
             out.println("</html>");
             
             }catch(Exception e){
                 
                 out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Registro</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Registro No Exitoso, vuelva a intentarlo</h1>"
-                    + "<a href='index.html'>Regresar a la página principal</a>");
-            out.println("</body>");
-            out.println("</html>");
-            
-            System.out.println("No se registro en la tabla");
-            System.out.println(e.getMessage());
-            System.out.println(e.getStackTrace());
+                out.println("<html>");
+                out.println("<head>");
+                out.println("<title>Servlet Registro</title>");            
+                out.println("</head>");
+                out.println("<body>");
+                out.println("<h1>Registro No Exitoso, vuelva a intentarlo</h1>"
+                    + "<a href='index.html'>Regresar a la pagina principal</a>");
+                out.println("</body>");
+                out.println("</html>");
+                
+                System.out.println("No se registro en la tabla");
+                System.out.println(e.getMessage());
+                System.out.println(e.getStackTrace());
             
             }
         }
@@ -197,6 +212,20 @@ public class Registro extends HttpServlet {
      *
      * @return a String containing servlet description
      */
+    
+    //hace falta un destructor el destructor libera las conexiones y la memoria de las variables
+    public void destroy(){
+        try{
+            con.close();
+        
+        }catch(Exception e){
+            super.destroy();
+        
+        }
+    }
+    
+    
+    
     @Override
     public String getServletInfo() {
         return "Short description";
