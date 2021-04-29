@@ -122,7 +122,7 @@ public class Consultar extends HttpServlet {
                     + "</thead>");
             try{
                 //codigo java para la consulta
-                String nom, appat, apmat, correo;
+                String nom, appat, appmat, correo;
                 int edad, id;
                 
                 //tenemos que crear la querry
@@ -137,13 +137,13 @@ public class Consultar extends HttpServlet {
                     id = rs.getInt("id_usu");
                     nom = rs.getString("nom_usu");
                     appat = rs.getString("appat_usu");
-                    apmat = rs.getString("apmat_usu");
+                    appmat = rs.getString("appmat_usu");
                     edad = rs.getInt("edad_usu");
                     correo = rs.getString("correo_usu");
                     
                     out.println("<tbody>"
                             + "<tr><td>"+id+"</td>"
-                            + "<td>"+nom+" "+appat+" "+apmat+" </td>"
+                            + "<td>"+nom+" "+appat+" "+appmat+" </td>"
                             + "<td>"+edad+"</td>"
                             + "<td>"+correo+"</td></tr>"
                             + "</tbody>");

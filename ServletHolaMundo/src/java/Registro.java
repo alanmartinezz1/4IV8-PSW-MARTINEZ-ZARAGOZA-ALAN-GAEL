@@ -89,12 +89,12 @@ public class Registro extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             
-            String nom, appat, apmat, correo, ip, iph;
+            String nom, appat, appmat, correo, ip, iph;
             int edad, puerto, puertoh;
             
             nom = request.getParameter("nombre");
             appat = request.getParameter("appat");
-            apmat = request.getParameter("appmat");
+            appmat = request.getParameter("appmat");
             correo = request.getParameter("correo");
                         
             edad = Integer.parseInt(request.getParameter("edad"));
@@ -118,7 +118,7 @@ public class Registro extends HttpServlet {
                 
                 String q = "insert into Mregistro "
                         + "(nom_usu, appat_usu, apmat_usu, edad_usu, correo_usu) "
-                        + "values ('"+nom+"', '"+appat+"', '"+apmat+"', "+edad+", '"+correo+"')";
+                        + "values ('"+nom+"', '"+appat+"', '"+appmat+"', "+edad+", '"+correo+"')";
                 
                 //ejecutar la sentencia
                 set.executeUpdate(q);
@@ -137,7 +137,7 @@ public class Registro extends HttpServlet {
             out.println("<br>"
                     + "Tu apellido paterno es: " + appat
                     + "<br>"
-                    + "Tu apellido materno es: " + apmat
+                    + "Tu apellido materno es: " + appmat
                     + "<br>"
                     + "Tu edad es: " +edad
                     + "<br>"
