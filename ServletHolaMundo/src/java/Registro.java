@@ -116,7 +116,7 @@ public class Registro extends HttpServlet {
             
             try{
                 
-                String q = "insert into Mregistro "
+                String q = "insert into mregistro "
                         + "(nom_usu, appat_usu, apmat_usu, edad_usu, correo_usu) "
                         + "values ('"+nom+"', '"+appat+"', '"+appmat+"', "+edad+", '"+correo+"')";
                 

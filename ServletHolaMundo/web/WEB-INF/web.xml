@@ -12,10 +12,6 @@
         <servlet-name>Eliminar</servlet-name>
         <servlet-class>Eliminar</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>NewServlet</servlet-name>
-        <servlet-class>NewServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>Registro</servlet-name>
         <url-pattern>/Registro</url-pattern>
@@ -27,10 +23,6 @@
     <servlet-mapping>
         <servlet-name>Eliminar</servlet-name>
         <url-pattern>/Eliminar</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>NewServlet</servlet-name>
-        <url-pattern>/NewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
