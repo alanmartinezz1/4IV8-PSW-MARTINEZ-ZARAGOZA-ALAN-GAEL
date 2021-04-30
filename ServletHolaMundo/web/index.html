@@ -9,16 +9,22 @@ and open the template in the editor.
         <title>Registro de Usuarios</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./CSS/style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+        <script languague="JavaScript" type="text/JavaScript" src="JS/validar.js"></script>
     </head>
     <body>
+        <header id="head">
+            <h1 class="Titulo">Formulario</h1>
+        </header>
         <div class="container" >
             
             <div class="containerRegistro">
-                
-                <form name="formulario" method="post" 
-                  action="Registro">
+                <h1 class="textou">Llene el formulario para entrar a la base de datos</h1>
+                <form name="formulario" method="post" action="Registro" onsubmit="return validarCosas(this)">
                 <label>Nombre:</label>
-                <input type="text" name="nombre" >
+                <input type="text" name="nombre">
                 <br>
                 <label>Apellido Paterno:</label>
                 <input type="text" name="appat" >
@@ -30,27 +36,29 @@ and open the template in the editor.
                 <input type="number" name="edad" min="01" max="99" size="2" >
                 <br>
                 <label>Correo:</label>
-                <input type="email" name="correo" >
+                <input type="email" name="correo">
                 <br>
-                <input type="submit" value="Registro de Usuarios" >
-                <input type="reset" value="Borrar Registro" >
+                <input type="submit" value="Registro de Usuarios" class="botonezzz">
+                <input type="reset" value="Borrar Registro" class="botonezzz">
             </form>
             </div>
             <br>
             <div class="containerConsulta" >
                 <br>
+                <h1 class="textou">De click para revisar la base de datos</h1>
                 <form method="get" name="consultarregistro" action="Consultar">
-                    <input type="submit" value="Consultar Tabla de Usuarios" >
+                    <input type="submit" value="Consultar Tabla de Usuarios" class="botonezzz">
                 </form>
             </div>
             <br>
             <div class="containerEliminar" >
                 <br>
-                <form method="post" name="formularioeliminar" action="Eliminar">
+                <h1 class="textou">Escriba el ID del usuario que desee remover</h1>
+                <form method="post" name="formularioeliminar" action="Eliminar" onsubmit="return validarCosas(this)">
                     <label>ID del Usuario a Eliminar</label>
                     <input type="number" name="ideliminar" >
                     <br>
-                    <input type="submit" value="Eliminar Usuario" >
+                    <input type="submit" value="Eliminar Usuario" class="botonezzz">
                 </form>
                 
             </div>
@@ -58,13 +66,33 @@ and open the template in the editor.
             <br>
             
             <div class="containerActualizar">
-                <h1>tarea wiiii deberan de agregar la css y js correspondiente a los formularios</h1>
                 <br>
-                <h1>deberan de agregar la funcionalidad de poder realizar una actualizacion a los datos:
-                nombre, appat, apmat, edad, correo</h1>
+                <h1 class="textou">Escriba el ID del usuario que quiera cambiar</h1>
+                <form method="post" name="formularioeliminar" action="Actualizar" onsubmit="return validarCosas(this)">
+                    <label>ID del Usuario a Eliminar</label>
+                    <input type="number" name="ideliminar" >
+                    <br>
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre">
+                    <br>
+                    <label>Apellido Paterno:</label>
+                    <input type="text" name="appat" >
+                    <br>
+                    <label>Apellido Materno:</label>
+                    <input type="text" name="appmat" >
+                    <br>
+                    <label>Edad:</label>
+                    <input type="number" name="edad" min="01" max="99" size="2" >
+                    <br>
+                    <label>Correo:</label>
+                    <input type="email" name="correo">
+                    <br>
+                    <br>
+                    <input type="submit" value="Modificar Usuario" class="botonezzz">
+                </form>
             </div>
             
-            
+            <br>
             
         </div>
     </body>

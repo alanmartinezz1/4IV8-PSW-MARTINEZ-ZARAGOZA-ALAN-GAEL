@@ -59,7 +59,7 @@ public class Consultar extends HttpServlet {
         //driver:gestor:puerto//IP/nombreBD
         
         String userName = "root";
-        String password = "n0m3l0";
+        String password = "OBYMA107";
         
         try{
             //colocamos el tipo de driver
@@ -109,11 +109,13 @@ public class Consultar extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Consultar</title>");            
+            out.println("<title>Servlet Consultar</title>"); 
+            out.println("<link rel='stylesheet' href='./CSS/style.css'>");
+            out.println("<script languague='JavaScript' type='text/JavaScript' src='JS/validar.js'></script>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Tabla General de Usuarios</h1>");
-            out.println("<table border='2'>"
+            out.println("<table border='2' id='tablaowo'>"
                     + "<thead>"
                         + "<tr><th>ID</th>"
                         + "<th>Nombre Completo</th>"

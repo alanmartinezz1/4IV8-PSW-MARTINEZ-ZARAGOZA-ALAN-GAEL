@@ -130,7 +130,9 @@ public class Registro extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Registro</title>");            
+            out.println("<title>Servlet Registro</title>");
+            out.println("<link rel='stylesheet' href='./CSS/style.css'>");
+            out.println("<script languague='JavaScript' type='text/JavaScript' src='JS/validar.js'></script>");
             out.println("</head>");
             out.println("<body>"
                     + "Tu nombre es: " + nom);
@@ -162,7 +164,9 @@ public class Registro extends HttpServlet {
                 out.println("<!DOCTYPE html>");
                 out.println("<html>");
                 out.println("<head>");
-                out.println("<title>Servlet Registro</title>");            
+                out.println("<title>Servlet Registro</title>"); 
+                out.println("<link rel='stylesheet' href='./CSS/style.css'>");
+                out.println("<script languague='JavaScript' type='text/JavaScript' src='JS/validar.js'></script>");
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1>Registro No Exitoso, vuelva a intentarlo</h1>"

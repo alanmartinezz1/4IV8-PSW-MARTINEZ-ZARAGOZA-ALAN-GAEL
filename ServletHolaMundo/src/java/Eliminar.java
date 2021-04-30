@@ -127,14 +127,16 @@ public class Eliminar extends HttpServlet {
             //preparo mi sentencia
             //delete from tabla where atributo = valor
             
-            String q = "delete from mregistro where id_usu = "+id;
+            String q = "delete from mregistro where id_usu = " + id;
             
             
             
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Eliminar</title>");            
+            out.println("<title>Servlet Eliminar</title>"); 
+            out.println("<link rel='stylesheet' href='./CSS/style.css'>");
+            out.println("<script languague='JavaScript' type='text/JavaScript' src='JS/validar.js'></script>");
             out.println("</head>");
             out.println("<body>");
             
@@ -143,8 +145,8 @@ public class Eliminar extends HttpServlet {
                 
                 set.executeUpdate(q);
                 System.out.println("Registro eliminado");
-            out.println("<h1>Usuario Eliminado</h1>");
-             set.close();
+                out.println("<h1>Usuario Eliminado</h1>");
+                set.close();
             }catch(Exception e){
             out.println("<h1>Usuario No Eliminado</h1>");
                 System.out.println("No se pudo eliminar el usuario");
