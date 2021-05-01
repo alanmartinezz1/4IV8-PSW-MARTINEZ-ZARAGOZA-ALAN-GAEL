@@ -115,6 +115,7 @@ public class Consultar extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Tabla General de Usuarios</h1>");
+            out.println("<br>");
             out.println("<table border='2' id='tablaowo'>"
                     + "<thead>"
                         + "<tr><th>ID</th>"

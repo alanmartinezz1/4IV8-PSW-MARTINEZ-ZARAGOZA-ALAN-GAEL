@@ -28,43 +28,60 @@ function validarCosas(formulario){
     
     //letras
 
-    var checkOk="QWERTYUIOPASDFGHJKLÑZXCVBNM+"+"qwertyuiopasdfghjklñzxcvbnm"+" ";
-    var checkNombre=formulario.nombre.value;
-    var checkAppat=formulario.appat.value;
-    var checkApmat=formulario.apmat.value;
-    var allValid=true;
+    var checkOk = "QWERTYUIOPASDFGHJKLÑZXCVBNM+" + "qwertyuiopasdfghjklñzxcvbnm" + " ";
+    var checkStrU = formulario.nombre.value;
+    var checkStrD = formulario.appat.value;
+    var checkStrT = formulario.appmat.value;
+    var allValid = true;
     
-    for(var i=0; i<checkNombre.length;i++){
-        var ch=checkNombre.charAt(i);
+    for(var i=0; i<checkStrU.length; i++){
+        var ch=checkStrU.charAt(i);
         for(var j=0; j<checkOk.length; j++)
-        if(ch==checkOk.charAt(j))
+        if(ch == checkOk.charAt(j))
             break;
-        if(j==checkOk.length){
+        if(j == checkOk.length){
+            allValid=false;
+            break;
+        }
+    }
+    if(!allValid){
+        alert("Escribe solo letras en el campo nombre");
+        formulario.nombre.focus();
+        return false;
+    }
+    
+    for(var i=0; i<checkStrD.length;i++){
+        var ch=checkStrD.charAt(i);
+        for(var j=0; j<checkOk.length; j++)
+        if(ch == checkOk.charAt(j))
+            break;
+        if(j == checkOk.length){
             allValid=false;
             break;
         }
     }
     
-    for(var i=0; i<checkAppat.length;i++){
-        var ch=checkAppat.charAt(i);
+    if(!allValid){
+        alert("Escribe solo letras en el campo Apellido Paterno");
+        formulario.appat.focus();
+        return false;
+    }
+    
+    for(var i=0; i<checkStrT.length;i++){
+        var ch=checkStrT.charAt(i);
         for(var j=0; j<checkOk.length; j++)
-        if(ch==checkOk.charAt(j))
+        if(ch == checkOk.charAt(j))
             break;
-        if(j==checkOk.length){
+        if(j == checkOk.length){
             allValid=false;
             break;
         }
     }
     
-    for(var i=0; i<checkApmat.length;i++){
-        var ch=checkNombre.charAt(i);
-        for(var j=0; j<checkOk.length; j++)
-        if(ch==checkOk.charAt(j))
-            break;
-        if(j==checkOk.length){
-            allValid=false;
-            break;
-        }
+    if(!allValid){
+        alert("Escribe solo letras en el campo Apellido Materno");
+        formulario.appmat.focus();
+        return false;
     }
 
     //numeros

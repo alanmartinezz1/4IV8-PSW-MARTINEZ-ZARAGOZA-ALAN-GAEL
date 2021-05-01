@@ -146,7 +146,7 @@ public class Eliminar extends HttpServlet {
                 set.executeUpdate(q);
                 System.out.println("Registro eliminado");
                 out.println("<h1>Usuario Eliminado</h1>");
-                set.close();
+                
             }catch(Exception e){
             out.println("<h1>Usuario No Eliminado</h1>");
                 System.out.println("No se pudo eliminar el usuario");

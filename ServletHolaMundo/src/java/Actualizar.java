@@ -37,7 +37,7 @@ public class Actualizar extends HttpServlet {
     public void init(ServletConfig cfg) throws ServletException {
 
         //lo primero que necesitamos es trazar la ruta al servidor DB
-        String URL = "jdbc:mysql:3306//localhost/registro";
+        String URL = "jdbc:mysql:3306//localhost/registro4iv8";
         //driver:gestor:puerto//IP/nombreBD
 
         String userName = "root";
@@ -51,7 +51,7 @@ public class Actualizar extends HttpServlet {
             en algunas ocaciones enviar error al conectarse con la bd
             y eso se debe a que ya estegrado el puerto en el driver
              */
-            URL = "jdbc:mysql://localhost/registro";
+            URL = "jdbc:mysql://localhost/registro4iv8";
             con = DriverManager.getConnection(URL, userName, password);
             set = con.createStatement();
             System.out.println("Conexion exitosa");
@@ -131,18 +131,18 @@ public class Actualizar extends HttpServlet {
 
                 set = con.createStatement();
 
-                idd = request.getParameter("id");
+                idd = request.getParameter("idcambiar");
 
                 if (idd == "") {
 
                     out.println("No hay id.");
 
                 } else {
-                    int id1 = Integer.parseInt(request.getParameter("idmod"));
+                    int id1 = Integer.parseInt(request.getParameter("idcambiar"));
 
-                    nom = request.getParameter("nombnre");
+                    nom = request.getParameter("nombre");
                     appat = request.getParameter("appat");
-                    apmat = request.getParameter("apmat");
+                    apmat = request.getParameter("appmat");
                     correo = request.getParameter("correo");
                     edad = request.getParameter("edad");
 
@@ -197,7 +197,8 @@ public class Actualizar extends HttpServlet {
                 out.println("</head>");
                 out.println("<body>");
                 out.println("<h1>Datos actualizados</h1>");
-                out.println("<table>"
+                out.println("<br>");
+                out.println("<table border='2' id='tablaowo'>"
                     + "<thead>"
                         + "<tr><th>ID</th>"
                         + "<th>Nombre Completo</th>"
@@ -214,7 +215,7 @@ public class Actualizar extends HttpServlet {
                     correoo = rs.getString("correo_usu");
                     
                     out.println("<tbody>"
-                            + "<tr><td>"+idd+"</td>"
+                            + "<tr><td>"+iddd+"</td>"
                             + "<td>"+nomm+" "+appatt+" "+apmatt+" </td>"
                             + "<td>"+edadd+"</td>"
                             + "<td>"+correoo+"</td></tr>"
